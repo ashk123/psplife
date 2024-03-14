@@ -5,6 +5,7 @@
 #include <time.h>
 #include "rect.h"
 #include "var.h"
+#include "life.h"
 
 char playGround[ROW][COL];
 

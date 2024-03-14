@@ -1,4 +1,4 @@
-<p align=center style="font-size: 25px;font-family: tahoma"> John Horton Conway's Game of Life PSP! </p>
+<h3 align=center> John Horton Conway's Game of Life PSP! </h3>
 <br/>
 This is the PSP (PlayStation Portable) version of Conway's game of life.
 
@@ -32,4 +32,4 @@ If you want to test this on actual device, you can follow the instruction from o
 
 ### Why?
 
-There is multiple reasons that I made that, but in nut-shell it's Fun!.
+There is multiple reasons that I made that, but in a nutshell it's Fun!.

@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# A very simple shell script to automate your compiling process
+# Be sure to make a build directory before running this shell script
+# Change the PATH to your emulator installation path
+
+PATH=""
+cd ../build/
+make
+cp -rf EBOOT.PBP $(PATH)

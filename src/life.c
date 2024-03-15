@@ -17,6 +17,7 @@ void UpdateLifeMap() {
 }
 
 
+
 void Evolution() {
 	char new_play_ground[COL][ROW];
 	for (int x = 0; x < ROW; x++) {

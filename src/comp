@@ -4,7 +4,7 @@
 # Be sure to make a build directory before running this shell script
 # Change the PATH to your emulator installation path
 
-PATH=""
+Path=""
 cd ../build/
 make
-cp -rf EBOOT.PBP $(PATH)
+cp -rf EBOOT.PBP $Path

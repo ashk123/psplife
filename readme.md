@@ -32,4 +32,4 @@ If you want to test this on actual device, you can follow the instruction from o
 
 ### Why?
 
-There is multiple reasons that I made that, but in a nutshell it's Fun!.
+There are multiple reasons that I made that, but in a nutshell it's Fun!.

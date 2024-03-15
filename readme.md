@@ -6,7 +6,7 @@ If you want to test this out, you can use the pre-binary/stable version from rel
 
 ### How to run?
 
-- If you don't have a actual PSP (I've didn't test it on actual bare metal yet, then dw :>) you can run the .EBP file from release section on your emulator
+- If you don't have a actual PSP (I've didn't test it on actual bare metal yet, then dw :>) you can run the .PBP file from release section on your emulator
 
 - Or maybe you want to build the game by yourself, for building the game you need [_PSPDEV_](https://pspdev.github.io/quickstart.html) development kit. you can download the latest version form their repository
 
@@ -20,7 +20,7 @@ mkdir -p build
 psp-cmake ..
 make
 ```
-If everything goes well, you will see a .EBP file.
+If everything goes well, you will see a .PBP file.
 
 ### More
 

@@ -54,16 +54,16 @@ draw(void) {
 				(c == 7) ||
 				(c == ROW) ||
 				(c2 == COL)){
-				drawRect(c * 7, c2 * 7, 5, 5, 0x123786F3);
+				drawRect(c * (CFSIZE * CFPAD), c2 * (CFSIZE * CFPAD), CFSIZE, CFSIZE, 0x123786F3);
 			}
 		}
 	}
 	for (int x = 8; x < ROW; x++){
 		for (int y = 3; y < COL; y++){
 			if (playGround[x][y] == 1) {
-				drawRect(x * 7, y * 7, 5, 5, WHITE);
+				drawRect(x * (CSIZE + CPAD), y * (CSIZE + CPAD), CSIZE, CSIZE, WHITE);
 			} else {
-				drawRect(x * 7, y * 7, 5, 5, BLACK);
+				drawRect(x * (CSIZE + CPAD), y * (CSIZE + CPAD), CSIZE, CSIZE, BLACK);
 			}
 	 	}
 	}

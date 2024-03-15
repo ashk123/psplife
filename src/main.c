@@ -11,6 +11,8 @@
 PSP_MODULE_INFO("GameOfLife", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_VFPU | THREAD_ATTR_USER);
 
+void sleep(float value);
+
 int done = 1;
 
 void frames() {

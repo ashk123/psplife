@@ -11,37 +11,39 @@
 PSP_MODULE_INFO("GameOfLife", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_VFPU | THREAD_ATTR_USER);
 
-void sleep(float value);
+// void sleep(float value);
 
 int done = 1;
 
-void frames() {
-	sceGuStart(GU_DIRECT, list);
-	sceGuClearColor(0x00000000);
-	sceGuClear(GU_COLOR_BUFFER_BIT);
-
+void frames()
+{
+    sceGuStart(GU_DIRECT, list);
+    sceGuClearColor(0x00000000);
+    sceGuClear(GU_COLOR_BUFFER_BIT);
 }
 
-void endFrame(){
+void endFrame()
+{
     sceGuFinish();
     sceGuSync(0, 0);
     sceDisplayWaitVblankStart();
     sceGuSwapBuffers();
 }
 
-int main() {
+int main()
+{
     initGu();
-	frames();
-	UpdateLifeMap();
-	endFrame();
+    frames();
+    UpdateLifeMap();
+    endFrame();
     setup_callbacks();
-    while(done){
+    while (done)
+    {
         frames();
-		draw();
-		Evolution();
+        draw();
+        Evolution();
         endFrame();
-		sleep(0.8);
+        sleep(0.8);
     }
     return 0;
 }
-

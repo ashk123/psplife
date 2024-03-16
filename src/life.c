@@ -9,63 +9,76 @@
 
 char playGround[ROW][COL];
 
-void UpdateLifeMap() {
+void UpdateLifeMap()
+{
 	srand(time(NULL));
 	for (int x = 0; x < ROW; x++)
 		for (int y = 0; y < COL; y++)
 			playGround[x][y] = rand() < RAND_MAX / 10 ? 1 : 0;
 }
 
-
-
-void Evolution() {
+void Evolution()
+{
 	char new_play_ground[COL][ROW];
-	for (int x = 0; x < ROW; x++) {
-		for (int y = 0; y < COL; y++) {
+	for (int x = 0; x < ROW; x++)
+	{
+		for (int y = 0; y < COL; y++)
+		{
 			int lives = 0;
-			for (int xd = x - 1; xd <= x + 1; xd++) {
-				for (int yd = y - 1; yd <= y + 1; yd++) {
-					if (playGround[(xd + ROW) % ROW][(yd + COL) % COL]) {
+			for (int xd = x - 1; xd <= x + 1; xd++)
+			{
+				for (int yd = y - 1; yd <= y + 1; yd++)
+				{
+					if (playGround[(xd + ROW) % ROW][(yd + COL) % COL])
+					{
 						lives++;
-						//drawRect(x, y, 5, 5, 0xFF123487);
+						// drawRect(x, y, 5, 5, 0xFF123487);
 					}
 				}
 			}
-			if (playGround[x][y]) lives--;
-			new_play_ground[x][y] = (lives==3 || (lives==2 && playGround[x][y]));
+			if (playGround[x][y])
+				lives--;
+			new_play_ground[x][y] = (lives == 3 || (lives == 2 && playGround[x][y]));
 		}
 	}
-	for (int x = 0; x < ROW; x++) 
+	for (int x = 0; x < ROW; x++)
 		for (int y = 0; y < COL; y++)
-				playGround[x][y] = new_play_ground[x][y];
+			playGround[x][y] = new_play_ground[x][y];
 }
 
-void
-draw(void) {
+void draw(void)
+{
 	int position = 0;
-	//drawRect(0, 0, 50, 50);
-	//drawRect(50, 0, 50, 50);
-	//drawRect(100, 0, 50, 50);
+	// drawRect(0, 0, 50, 50);
+	// drawRect(50, 0, 50, 50);
+	// drawRect(100, 0, 50, 50);
 
 	/* Make a frame for life's board*/
-	for (int c = 7; c <= ROW; c++) {
-		for (int c2 = 2; c2 <= COL; c2++) {
-			if ((c2 == 2) || 
+	for (int c = 7; c <= ROW; c++)
+	{
+		for (int c2 = 2; c2 <= COL; c2++)
+		{
+			if ((c2 == 2) ||
 				(c == 7) ||
 				(c == ROW) ||
-				(c2 == COL)){
-				drawRect(c * (CFSIZE * CFPAD), c2 * (CFSIZE * CFPAD), CFSIZE, CFSIZE, 0x123786F3);
+				(c2 == COL))
+			{
+				drawRect(c * (CSIZE + CPAD), c2 * (CSIZE + CPAD), CSIZE, CSIZE, 0x123786F3);
 			}
 		}
 	}
-	for (int x = 8; x < ROW; x++){
-		for (int y = 3; y < COL; y++){
-			if (playGround[x][y] == 1) {
+	for (int x = 8; x < ROW; x++)
+	{
+		for (int y = 3; y < COL; y++)
+		{
+			if (playGround[x][y] == 1)
+			{
 				drawRect(x * (CSIZE + CPAD), y * (CSIZE + CPAD), CSIZE, CSIZE, WHITE);
-			} else {
+			}
+			else
+			{
 				drawRect(x * (CSIZE + CPAD), y * (CSIZE + CPAD), CSIZE, CSIZE, BLACK);
 			}
-	 	}
+		}
 	}
-	
 }

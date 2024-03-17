@@ -1,5 +1,5 @@
-#define ROW 60
-#define COL 35
+#define ROW 68
+#define COL 38
 #define CSIZE 5
 #define CPAD 2
 // #define CFSIZE CSIZE

@@ -7,7 +7,7 @@
 #include "var.h"
 #include "life.h"
 
-char playGround[ROW][COL];
+char playGround[512][512];
 
 void UpdateLifeMap()
 {
@@ -19,7 +19,7 @@ void UpdateLifeMap()
 
 void Evolution()
 {
-	char new_play_ground[COL][ROW];
+	char new_play_ground[512][512];
 	for (int x = 0; x < ROW; x++)
 	{
 		for (int y = 0; y < COL; y++)
@@ -54,12 +54,12 @@ void draw(void)
 	// drawRect(100, 0, 50, 50);
 
 	/* Make a frame for life's board*/
-	for (int c = 7; c <= ROW; c++)
+	for (int c = 0; c <= ROW; c++)
 	{
-		for (int c2 = 2; c2 <= COL; c2++)
+		for (int c2 = 0; c2 <= COL; c2++)
 		{
-			if ((c2 == 2) ||
-				(c == 7) ||
+			if ((c2 == 0) ||
+				(c == 0) ||
 				(c == ROW) ||
 				(c2 == COL))
 			{
@@ -67,9 +67,10 @@ void draw(void)
 			}
 		}
 	}
-	for (int x = 8; x < ROW; x++)
+	// drawRect(ROW - 1 * 7, COL * 7, CSIZE, CSIZE, 0x123786F3);
+	for (int x = 1; x < ROW; x++)
 	{
-		for (int y = 3; y < COL; y++)
+		for (int y = 1; y < COL; y++)
 		{
 			if (playGround[x][y] == 1)
 			{

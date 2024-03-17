@@ -7,6 +7,7 @@
 #include "rect.h"
 #include "callback.h"
 #include "life.h"
+#include "var.h"
 
 PSP_MODULE_INFO("GameOfLife", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_VFPU | THREAD_ATTR_USER);
@@ -18,7 +19,7 @@ int done = 1;
 void frames()
 {
     sceGuStart(GU_DIRECT, list);
-    sceGuClearColor(0x00000000);
+    sceGuClearColor(BLACK);
     sceGuClear(GU_COLOR_BUFFER_BIT);
 }
 

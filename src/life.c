@@ -63,7 +63,7 @@ void draw(void)
 				(c == ROW) ||
 				(c2 == COL))
 			{
-				drawRect(c * (CSIZE + CPAD), c2 * (CSIZE + CPAD), CSIZE, CSIZE, 0x123786F3);
+				drawRect(c * (CSIZE + CPAD), c2 * (CSIZE + CPAD), CSIZE, CSIZE, ORANGE);
 			}
 		}
 	}

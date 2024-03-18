@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <time.h>
 #include "rect.h"
-#include "var.h"
+#include "colors.h"
 #include "life.h"
 
 char playGround[512][512];

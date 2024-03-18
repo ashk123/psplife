@@ -7,7 +7,7 @@
 #include "rect.h"
 #include "callback.h"
 #include "life.h"
-#include "var.h"
+#include "colors.h"
 
 PSP_MODULE_INFO("GameOfLife", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_VFPU | THREAD_ATTR_USER);
@@ -34,9 +34,7 @@ void endFrame()
 int main()
 {
     initGu();
-    frames();
     UpdateLifeMap();
-    endFrame();
     setup_callbacks();
     while (done)
     {

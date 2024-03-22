@@ -1,5 +1,7 @@
-#define ROW 68
-#define COL 38
+#include "rect.h"
+
+#define ROW ((int)(SCREEN_WIDTH - 35) / (CSIZE + CPAD))
+#define COL ((int)SCREEN_HEIGHT / (CSIZE + CPAD))
 #define CSIZE 5
 #define CPAD 2
 // #define CFSIZE CSIZE

@@ -6,6 +6,7 @@
 #include "rect.h"
 #include "colors.h"
 #include "life.h"
+#include "ctrl.h"
 
 char playGround[512][512];
 
@@ -20,6 +21,7 @@ void UpdateLifeMap()
 void Evolution()
 {
 	char new_play_ground[512][512];
+	Pl* pl = getPl();
 	for (int x = 0; x < ROW; x++)
 	{
 		for (int y = 0; y < COL; y++)
@@ -36,6 +38,9 @@ void Evolution()
 					}
 				}
 			}
+			if (pl->act == 1){
+				new_play_ground[pl->x][pl->y] = 1;
+			}
 			if (playGround[x][y])
 				lives--;
 			new_play_ground[x][y] = (lives == 3 || (lives == 2 && playGround[x][y]));
@@ -51,8 +56,9 @@ void draw(void)
 	int position = 0;
 	// drawRect(0, 0, 50, 50);
 	// drawRect(50, 0, 50, 50);
+	
+	Pl* pl = getPl();
 	// drawRect(100, 0, 50, 50);
-
 	/* Make a frame for life's board*/
 	for (int c = 0; c <= ROW; c++)
 	{
@@ -80,6 +86,10 @@ void draw(void)
 			{
 				drawRect(x * (CSIZE + CPAD), y * (CSIZE + CPAD), CSIZE, CSIZE, BLACK);
 			}
+
+			drawRect(pl->x * (CSIZE + CPAD), pl->y * (CSIZE + CPAD), CSIZE, CSIZE, GREEN);
+
 		}
 	}
+
 }

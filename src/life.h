@@ -4,6 +4,7 @@
 #define COL ((int)SCREEN_HEIGHT / (CSIZE + CPAD))
 #define CSIZE 5
 #define CPAD 2
+#define CSP	7
 // #define CFSIZE CSIZE
 // #define CFPAD CPAD
 

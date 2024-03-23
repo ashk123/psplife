@@ -8,6 +8,7 @@
 #include "callback.h"
 #include "life.h"
 #include "colors.h"
+#include "ctrl.h"
 
 PSP_MODULE_INFO("GameOfLife", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_VFPU | THREAD_ATTR_USER);
@@ -33,16 +34,22 @@ void endFrame()
 
 int main()
 {
+	SceCtrlData pad;
+	CtrlInitMain();
     initGu();
     UpdateLifeMap();
     setup_callbacks();
-    while (done)
-    {
+    while (done){
+
+        sceCtrlReadBufferPositive(&pad, 1);
+
+        sleep(0.8);
+		CtrlControl(&pad);
         frames();
         draw();
         Evolution();
         endFrame();
-        sleep(0.8);
+
     }
     return 0;
 }
